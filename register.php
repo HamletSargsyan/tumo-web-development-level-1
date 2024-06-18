@@ -39,10 +39,12 @@ include("_meta.php");
         </div>
         <div class="row mb-3">
             <div class="col">
-                <label for="birth_date">Birth date</label>
-                <input type="date" class="form-control" id="birth_date" name="birth_date" required>
+                <input type="number" class="form-control" placeholder="Age" id="age" name="age" required>
             </div>
         </div>
+        <a href="login.php" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Have an account? Log in</a>
+        <br>
+        <br>
         <button type="submit" class="btn btn-primary" name="register">Submit</button>
     </form>
 

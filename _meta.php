@@ -7,30 +7,22 @@ echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstra
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 ';
 
+
+
 $pages = [
     "home" => [
         "url" => "index.php"
     ],
-    "loop" => [
-        "url" => "loop.php"
-    ],
-    // "task" => [
-    //     "url" => "task.php"
-    // ],
-    "single" => [
-        "url" => "single.php"
-    ],
-    "product" => [
-        "url" => "product.php"
-    ],
     "register" => [
         "url" => "register.php"
+    ],
+    "login" => [
+        "url" => "login.php"
+    ],
+    "posts" => [
+        "url" => "posts.php"
     ]
 ];
-
-$posts = [
-
-]
 
 
 ?>
