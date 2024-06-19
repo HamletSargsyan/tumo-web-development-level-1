@@ -29,17 +29,19 @@ include("_navbar.php");
                 <input type="password" class="form-control" placeholder="Password" name="password" required>
             </div>
             <div class="col">
-                <select class="form-select" name="gender" required>
-                    <option selected>Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                </select>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Gender</label>
+                    <select class="form-select" name="gender" required>
+                        <option value="other">Other</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
             </div>
         </div>
         <div class="row mb-3">
             <div class="col">
-                <input type="number" class="form-control" placeholder="Age" id="age" name="age" required>
+                <input type="number" class="form-control" placeholder="Age" id="age" name="age" min=1 max=100 required>
             </div>
         </div>
         <a href="login.php" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Have an account? Log in</a>
@@ -47,5 +49,4 @@ include("_navbar.php");
         <br>
         <button type="submit" class="btn btn-primary" name="register">Submit</button>
     </form>
-
 </div>
