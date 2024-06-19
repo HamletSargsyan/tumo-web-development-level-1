@@ -1,0 +1,8 @@
+{
+    "name": "PHP with Nginx",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "php",
+    "workspaceFolder": "/var/www/html",
+    "postCreateCommand": "docker-compose up -d"
+  }
+  
