@@ -7,20 +7,27 @@ echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstra
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 ';
 
+// ! Bootsrap icons
+echo '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">';
 
+// ! Custom styles
+echo '<link href="styles/index.css" rel="stylesheet" />';
+
+// ! Custom scripts
+echo '<script type="module" src="./lib/index.js"></script>';
 
 $pages = [
     "home" => [
         "url" => "index.php"
+    ],
+    "posts" => [
+        "url" => "posts.php"
     ],
     "register" => [
         "url" => "register.php"
     ],
     "login" => [
         "url" => "login.php"
-    ],
-    "posts" => [
-        "url" => "posts.php"
     ]
 ];
 
