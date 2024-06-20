@@ -47,6 +47,10 @@ include("_navbar.php");
         <a href="login.php" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Have an account? Log in</a>
         <br>
         <br>
-        <button type="submit" class="btn btn-primary" name="register">Submit</button>
+        <button type="submit" class="btn btn-primary" name="register">Register</button>
     </form>
 </div>
+
+<?php
+include("_footer.php");
+?>

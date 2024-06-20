@@ -3,21 +3,31 @@ include("_meta.php");
 include("_navbar.php");
 ?>
 
-<div class="container">
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-        <div class="carousel-inner" id="carousel-items">
-            <div class="carousel-item active">
-                <img src="..." class="d-block w-100" alt="...">
-            </div>
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner" id="carousel-items">
+        <div class="carousel-item active">
+            <img src="..." class="d-block w-100" alt="...">
         </div>
     </div>
 </div>
 
+<div class="container">
+    <h1 class="text-center">Blog</h1>
+
+    <p class="text-secondary">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed magnam molestiae, error consequatur sunt suscipit ullam animi sapiente. Voluptate est commodi repellendus explicabo, ad eum sit et ratione? Dolores, obcaecati?
+    </p>
+</div>
+
+<?php
+include("_footer.php");
+?>
+
 <style>
 .carousel-inner img {
     width: 100%;
-    height: 300px; /* Установите желаемую высоту */
-    object-fit: cover; /* Изображение будет обрезано, чтобы заполнить контейнер, сохраняя при этом соотношение сторон */
+    height: 300px;
+    object-fit: cover;
 }
 .carousel-caption {
     color: black;
@@ -43,7 +53,7 @@ fetch('https://jsonplaceholder.typicode.com/posts')
 
                 postsWithPhotos.forEach((post, index) => {
                     document.getElementById('carousel-items').innerHTML += `
-                    <div class="carousel-item ${index === 0 ? 'active' : ''}" style="cursor: pointer !important;" onclick="openPost(${post.id})">
+                    <div class="carousel-item ${index === 0 ? 'active' : ''}" style="cursor: pointer !important;" onclick="window.location.href = 'post.php?id=${post.id}'">
                         <img src="${post.photo}" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>${post.title}</h5>
@@ -55,7 +65,4 @@ fetch('https://jsonplaceholder.typicode.com/posts')
             });
     });
 
-function openPost(postId) {
-    window.location.href = `post.php?id=${postId}`;
-}
 </script>

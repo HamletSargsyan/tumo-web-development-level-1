@@ -11,6 +11,9 @@ $userId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
     </div>
 </div>
 
+<?php
+include("_footer.php");
+?>
 
 <script>
 const userId = <?php echo $userId; ?>;

@@ -16,7 +16,10 @@ $postId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
     </div>
 </div>
 
-<script src="user.js"></script>
+<?php
+include("_footer.php");
+?>
+
 <script>
 const postId = <?php echo $postId; ?>;
 

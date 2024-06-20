@@ -17,7 +17,7 @@ fetch("https://jsonplaceholder.typicode.com/users")
 
             document.getElementById("users").innerHTML += `
             <div class="col">
-                <div class="card h-100" style="width: 18rem;" onclick="openProfile(${user.id})">
+                <div class="card h-100" style="width: 18rem;" onclick="window.location.href = 'profile.php?id=${user.id}'">
                     <img src="${avatar_url}" class="card-img-top" alt="avatar">
                     <div class="card-body">
                         <h5 class="card-title">${user.name}</h5>
@@ -29,7 +29,8 @@ fetch("https://jsonplaceholder.typicode.com/users")
         });
     });
 
-function openProfile(userId) {
-    window.location.href = `profile.php?id=${userId}`;
-}
 </script>
+
+<?php
+include("_footer.php");
+?>

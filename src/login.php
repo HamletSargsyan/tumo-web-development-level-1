@@ -22,7 +22,11 @@ include("_navbar.php");
         <a href="register.php" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">No account? Register now</a>
         <br>
         <br>
-        <button type="submit" class="btn btn-primary" name="login">Submit</button>
+        <button type="submit" class="btn btn-primary" name="login">Login</button>
     </form>
 
 </div>
+
+<?php
+include("_footer.php");
+?>
