@@ -13,12 +13,10 @@ echo '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@
 // ! Custom styles
 echo '<link href="styles/index.css" rel="stylesheet" />';
 
-// ! Custom scripts
-echo '<script type="module" src="./lib/index.js"></script>';
 
 $pages = [
     "home" => [
-        "url" => "index.php"
+        "url" => "/"
     ],
     "posts" => [
         "url" => "posts.php"
