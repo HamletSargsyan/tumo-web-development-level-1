@@ -13,21 +13,23 @@ fetch("https://jsonplaceholder.typicode.com/users")
     .then(response => response.json())
     .then(users => {
         users.forEach(user => {
-            var avatar_url = `https://api.dicebear.com/9.x/identicon/svg?seed=${user.username}`
+            var avatar_url = `https://api.dicebear.com/9.x/identicon/svg?seed=${user.username}`;
 
             document.getElementById("users").innerHTML += `
             <div class="col">
-                <div class="card h-100" style="width: 18rem;" onclick="window.location.href = "user.php?username=${user.username}">
-                    <img src="${avatar_url}" class="card-img-top" hight=100 width=100 alt="avatar">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><i class="bi bi-envelope"></i> ${user.email}</li>
-                        <li class="list-group-item"><a class="card-link" href="user.php?username=${user.username}">@${user.username}</a></li>
-                    </ul>
-                </div>                
+                <div class="card h-100" style="width: 18rem;" onclick="openProfile(${user.id})">
+                    <img src="${avatar_url}" class="card-img-top" alt="avatar">
+                    <div class="card-body">
+                        <h5 class="card-title">${user.name}</h5>
+                        <p class="text-secondary">@${user.username}</p>
+                    </div>
+                </div>
             </div>
-            `
+            `;
         });
-    })
+    });
 
-
+function openProfile(userId) {
+    window.location.href = `profile.php?id=${userId}`;
+}
 </script>
