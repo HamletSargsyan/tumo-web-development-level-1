@@ -6,13 +6,11 @@ footer {
     height: fit-content;
     text-align: center;
     padding: 2%;
-    background-color: rgb(0, 0, 0, 0.2);
-
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
-/* .icon-links {
-    width: 30%;
+.icon-links {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-} */
+    justify-content: space-around;
+    justify-items: center;
+}

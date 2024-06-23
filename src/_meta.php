@@ -15,7 +15,7 @@ echo '<link href="styles/index.css" rel="stylesheet" />';
 
 $pages = [
     "home" => [
-        "url" => "/"
+        "url" => "index.php"
     ],
     "posts" => [
         "url" => "posts.php"
