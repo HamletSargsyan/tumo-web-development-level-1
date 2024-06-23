@@ -11,7 +11,8 @@ include("_navbar.php");
     </div>
 </div>
 
-<div class="container">
+
+<div class="container" style="margin-top: 5%;">
     <h1 class="text-center">Blog</h1>
 
     <p class="text-secondary">
