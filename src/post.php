@@ -1,12 +1,24 @@
 <?php
-include("_meta.php");
+require("_meta.php");
 include("_navbar.php");
 
 $postId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+
+$post = $posts[$postId];
+
 ?>
 
 <div class="container">
     <div id="post" class="mt-4">
+        <div>
+            <h2 class='text-center'><?php echo $post['title']; ?></h2>
+            <div>
+                <img src="<?php echo $post['image_url']; ?>" class='img-fluid rounded mx-auto d-block mb-5'>
+                <p><?php echo $post['body'];?></p>
+                <a href="<?php echo $post['original_url']; ?>">Full article</a>
+            </div>
+        </div>
+           
     </div>
 
     <hr>
@@ -23,24 +35,6 @@ include("_footer.php");
 <script>
 const postId = <?php echo $postId; ?>;
 
-fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
-    .then(response => response.json())
-    .then(post => {
-        // Загружаем картинку для этого поста
-        fetch(`https://jsonplaceholder.typicode.com/photos/${postId}`)
-            .then(response => response.json())
-            .then(photo => {
-                document.getElementById('post').innerHTML = `
-                    <div>
-                        <h2 class="text-center">${post.title.toUpperCase()}</h2>
-                        <div>
-                            <img src="${photo.url}" class="rounded mx-auto d-block mb-5" alt="...">
-                            <p>${(post.body + " ").repeat(50)}</p>
-                        </div>
-                    </div>
-                `;
-            });
-    });
 
 fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
     .then(response => response.json())
@@ -49,8 +43,8 @@ fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
         commentsContainer.innerHTML = '';
 
         comments.forEach(comment => {
-                var avatar_url = `https://api.dicebear.com/9.x/identicon/svg?seed=${comment.email}`;
-                commentsContainer.innerHTML += `
+            var avatar_url = `https://api.dicebear.com/9.x/identicon/svg?seed=${comment.email}`;
+            commentsContainer.innerHTML += `
                 <div class="card mt-3" style="cursor: default !important;">
                     <div class="card-body">
                         <div class="d-flex align-items-center">
@@ -64,7 +58,6 @@ fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
                     </div>
                 </div>
             `;
-            });
         });
-
+    });
 </script>
